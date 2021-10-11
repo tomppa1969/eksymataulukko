@@ -1,6 +1,15 @@
 # Eksymataulukko
 Eksymätaulukon laatiminen 8 ilmansuunnan eksymistä.
 
+* pohjoinen 000°
+* koillinen 045°
+* itä 090°
+* kaakko 135°
+* etelä 180°
+* lounas 225°
+* länsi 270°
+* luode 315°
+
 Syötä ilmansuuntien eksymät vastaaviin syöttökenttiin etumerkkeineen.
 Max. yhdellä desimaalilla sekä käyttäen pistettä desimaalieroittimena.
 
@@ -17,7 +26,6 @@ jossa eksX vastaa syöttökenttiä ylhäältä alas, eks1 ... eks8
 
 eksymät lasketaan per suunta kaavalla:
 * eksymä = A + B * sin(KS) + C * cos(KS) + D * sin(2 * KS) + E * cos(2 * KS)
-
 
 Jossa KS ajettu kompassisuunta.
 
