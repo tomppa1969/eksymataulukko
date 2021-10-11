@@ -1,0 +1,2 @@
+# eksymataulukko
+Calculate deviation table
