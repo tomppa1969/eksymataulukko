@@ -1,0 +1,60 @@
+input {
+
+    text-align: center;
+    width: 50px;
+    alignment: center;
+    display: table-cell;
+}
+
+
+div {
+    margin: 5px 5px 5px 5px;
+}
+
+.cell{
+    display: table-cell;
+}
+
+.row {
+    display:  table-row;
+}
+
+#laskenta{
+    padding: 10px;
+    width: 600px;
+    border-style: outset;
+    border-width: 10px;
+}
+
+.kerroinresult{
+    color:green;
+    font-weight: bold;
+    background-color: azure;
+    width: 40px;
+    border-style: outset;
+    border-radius: 5px;
+    border-width: 2px;
+    alignment: center;
+    text-align: center;
+}
+
+.formula{
+    font-style: italic;
+    color: blue;
+}
+
+#input {
+    display:  table;
+    padding: 10px;
+    background-color: aqua;
+    width: 300px;
+    border-radius: 10px;
+}
+
+#kertoimet {
+    display:  table;
+    padding: 10px;
+    background-color:aqua;
+    width: 600px;
+    border-radius: 10px;
+}
