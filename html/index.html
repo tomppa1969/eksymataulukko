@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Eksymätaulukko</title>
     <link rel="stylesheet" type="text/css" href="tyylit.css">
 </head>
 <body>
+<h3>Eksymätaulukko.</h3>
+<h5>Täytä eksymät per suunta. Max. yksi desimaali, piste(.) desimaalieroittimena.</h5>
 <div id="input" style="float: left">
     <div class="row"><label class="cell">SUUNNAT</label><label class="cell">EKSYMÄT</label></div>
     <div class="row"><label class="cell">000°</label> <input type="text" value="" id="eks1"/>°</div>
@@ -35,6 +37,11 @@
     <div id="laskenta">
         <div class="row"><label class="cell formula">eksymä = A + B * sin(KS) + C * cos(KS) + D * sin(2 * KS) + E *
             cos(2 * KS)</label></div>
+    </div>
+    <div style="float: right"><button id="tulostus" style="visibility:hidden;color: green;font-weight: bold" onclick="print('kehys')">Tulosta eksymätaulukko</button></div>
+    <div id="kehys">
+        <div id="taulukko" style="visibility:hidden;">
+        </div>
     </div>
 </div>
 <script src="../js/calc.js"></script>
