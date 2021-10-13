@@ -51,6 +51,17 @@ function calculateKertoimet()
     eksymaTaulukko();
 }
 
+function sin(v)
+{
+    return Math.sin(v * (Math.PI / 180))
+}
+
+function cos(v)
+{
+    return Math.cos(v * (Math.PI / 180))
+}
+
+
 function getFloat( invalue )
 {
     if ( !isNaN( invalue ) && !isNaN( parseFloat( invalue ) ) )
@@ -122,7 +133,7 @@ function kerroinE()
 // eksymä = A + B * sin(KS) + C * cos(KS) + D * sin(2 * KS) + E * cos(2 * KS)
 function getEksyma( KS )
 {
-    return round( A + B * Math.sin( KS ) + C * Math.cos( KS ) + D * Math.sin( 2 * KS ) + E * Math.cos( 2 * KS ), 0 );
+    return round( A + B * sin( KS ) + C * cos( KS ) + D * sin( 2 * KS ) + E * cos( 2 * KS ), 0 );
 }
 
 function eksymaTaulukkoArvotNaytolle( arvo )
