@@ -51,16 +51,15 @@ function calculateKertoimet()
     eksymaTaulukko();
 }
 
-function sin(v)
+function sin( v )
 {
-    return Math.sin(v * (Math.PI / 180))
+    return Math.sin( v * (Math.PI / 180) )
 }
 
-function cos(v)
+function cos( v )
 {
-    return Math.cos(v * (Math.PI / 180))
+    return Math.cos( v * (Math.PI / 180) )
 }
-
 
 function getFloat( invalue )
 {
@@ -131,67 +130,12 @@ function kerroinE()
 }
 
 // eksymä = A + B * sin(KS) + C * cos(KS) + D * sin(2 * KS) + E * cos(2 * KS)
-function getEksyma( KS )
+function getEksyma( KS, _round = true )
 {
-    return round( A + B * sin( KS ) + C * cos( KS ) + D * sin( 2 * KS ) + E * cos( 2 * KS ), 0 );
-}
-
-function eksymaTaulukkoArvotNaytolle( arvo )
-{
-    const MASK = "000";
-    let res = MASK.substr( 0, MASK.length - arvo.length ) + arvo;
-    return res;
-}
-
-function eksymaTaulukko()
-{
-    let specific_tbody = el( "taulukko" );
-    specific_tbody.style.visibility="visible";
-    specific_tbody.style.display="table";
-    specific_tbody.style.padding= "10px";
-    specific_tbody.style.backgroundColor="white";
-    specific_tbody.style.width= "300px";
-    specific_tbody.style.borderStyle= "solid";
-    specific_tbody.style.borderWidth= "3px";
-    specific_tbody.style.borderColor= "black";
-    el("tulostus").style.visibility = "visible";
-    specific_tbody.innerHTML = "";
-    specific_tbody.innerHTML = "<div id=\"otsikko\" style=\"display: table-row\"><label style=\"display: table-cell\">KS</label><label style=\"display: table-cell\">eks</label><label\n" +
-        "    style=\"display: table-cell\"\n" +
-        ">MS</label></div>";
-    let i;
-    for ( i = 0; i < 36; i++ )
+    if ( _round )
     {
-        let kurssi = (i * 10);
-        let eksyma = getEksyma( kurssi );
-        let magSuunta = kurssi + eksyma;
-        specific_tbody.innerHTML +=
-            "<div id=\"rivi\" style=\"display: table-row\">" +
-            "<label style=\"display: table-cell;border-top-style: solid;border-top-width: 1px;border-top-color: black;\">"
-            + eksymaTaulukkoArvotNaytolle( kurssi.toString() ) +
-            "°</label><label style=\"display: table-cell;border-top-style: solid;border-top-width: 1px;border-top-color: black;\">" +
-            eksyma.toString() +
-            "°</label><label style=\"display: table-cell;border-top-style: solid;border-top-width: 1px;border-top-color: black;\">"
-            + eksymaTaulukkoArvotNaytolle(magSuunta.toString()) +
-            "°</label></div>"
+        return round( A + B * sin( KS ) + C * cos( KS ) + D * sin( 2 * KS ) + E * cos( 2 * KS ), 0 );
     }
-}
 
-function print(elem)
-{
-    var mywindow = window.open('', 'PRINT', 'height=400,width=600');
-
-    mywindow.document.write('<html><head><title>' + document.title  + '</title>');
-    mywindow.document.write('</head><body >');
-    mywindow.document.write('<h1>' + document.title  + '</h1>');
-    mywindow.document.write(document.getElementById(elem).innerHTML);
-    mywindow.document.write('</body></html>');
-
-    mywindow.document.close();
-    mywindow.focus();
-
-    mywindow.print();
-    mywindow.close();
-
-    return true;
+    return A + B * sin( KS ) + C * cos( KS ) + D * sin( 2 * KS ) + E * cos( 2 * KS );
 }
